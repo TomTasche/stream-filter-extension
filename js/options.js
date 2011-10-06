@@ -4,7 +4,7 @@
  * @author Mohamed Mansour 2011 (http://mohamedmansour.com)
  */
 
-// Extensions pages can all have access to the bacground page.
+// Extensions pages can all have access to the background page.
 var bkg = chrome.extension.getBackgroundPage();
 
 // When the DOM is loaded, make sure all the saved info is restored.

@@ -117,6 +117,16 @@ FilterInjection.prototype.renderItem = function(itemDOM) {
     if (removePost) {
       itemDOM.parentNode.removeChild(itemDOM);
     }
+
+    var filterListDiv = document.getElementById("inline-stream-filter-extension");
+    if (filterListDiv == null) {
+      var sidebarDiv = document.getElementsByClassName("MMGCf")[0];
+      sidebarDiv.innerHTML += "<div class='c-Qa-Fe'></div><div class='D09n1e'><div class='ozLinksComponent' id='inline-stream-filter-extension'><div class='nfkPhe dZtwwe' g:li='0'><a href='" + postURL.href + "' target='_top' class='a-j c-i-j-ua tg3b4c PrSdBd nlink-0 a-l-k kBICXe WFrJMd' title='&quot;" + filter + "&quot;'><div class='JKMYAe Nb51Cb'></div>" + filter + "</a><span role='button' class='yUPzuc a-l-k'></span></div></div></div>";
+    } else {
+      if (document.getElementById("inline-stream-filter-extension-" + filter) == null) {
+          filterListDiv.innerHTML += "<div class='nfkPhe dZtwwe' g:li='" + filterListDiv.childNodes.length + "' id='inline-stream-filter-extension-" + filter + "'><a href='" + postURL.href + "' target='_top' class='a-j c-i-j-ua tg3b4c PrSdBd nlink-0 a-l-k kBICXe WFrJMd' title='&quot;" + filter + "&quot;'><div class='JKMYAe Nb51Cb'></div>" + filter + "</a><span role='button' class='yUPzuc a-l-k'></span></div></div>";
+      }
+    }
   }.bind(this);
   
   // Check if we want to block gifs from running.

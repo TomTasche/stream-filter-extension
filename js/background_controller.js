@@ -126,8 +126,9 @@ BackgroundController.prototype.onMessage = function(request) {
   else if (request.method == 'SaveStat') {
     if (!this.session_filter_log[request.post_id]) {
       this.session_filter_length++;
-      chrome.browserAction.setBadgeText({text: '' + this.session_filter_length})
+      chrome.browserAction.setBadgeText({text: '' + this.session_filter_length});
     }
+
     this.session_filter_log[request.post_id] = {
       url: request.post_url,
       time: request.post_time,
